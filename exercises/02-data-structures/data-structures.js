@@ -30,9 +30,12 @@ function accessingAnArray() {
  *
  **/
 function highestNumber(array) {
-   var number = highestNumber(array);
+  var highestnumber = 0;
+  for (var i = 0; i < highestNumber.length; i++) {
+    if (highestnumber < array[i]) highestnumber = array[i];
   }
-  return number;
+
+  return highestnumber;
 }
 
 /**
