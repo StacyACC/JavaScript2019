@@ -4,7 +4,7 @@
  */
 
 function createAnArray() {
-  var array = [];
+  var array = ["Java", "Ruby", "Python"];
   /*** Add three items to the array ****/
   return array;
 }
@@ -16,7 +16,8 @@ function createAnArray() {
  */
 
 function accessingAnArray() {
-  var cars = ['BMW', 'Honda', 'Civic'];
+  var cars = ["BMW", "Honda", "Civic"];
+  return cars[0];
 }
 
 /**
@@ -28,7 +29,11 @@ function accessingAnArray() {
  * highestNumber([5, 1, 2, 3, 10]) // [10]
  *
  **/
-function highestNumber(array) {}
+function highestNumber(array) {
+   var number = highestNumber(array);
+  }
+  return number;
+}
 
 /**
  * Combine an array by using the spread operator
@@ -67,9 +72,9 @@ function createDogObject() {}
  */
 function accessObject() {
   var clothes = {
-    hat: 'ballcap',
-    shirt: 'jersey',
-    shoes: 'cleats'
+    hat: "ballcap",
+    shirt: "jersey",
+    shoes: "cleats"
   };
   // Only change code below this line
 
@@ -86,8 +91,8 @@ function accessObject() {
 
 function createStudentObject() {
   var student = {
-    firstname: '',
-    lastname: '',
+    firstname: "",
+    lastname: "",
     skills: []
   };
   // Only change code below this line.
@@ -106,8 +111,8 @@ function returnObjectProperties() {
   var dog = {
     tail: 1,
     legs: 4,
-    friends: ['Rusty', 'Sparky'],
-    name: 'Rocket'
+    friends: ["Rusty", "Sparky"],
+    name: "Rocket"
   };
   //Add code here
   //hint you need to return an array
