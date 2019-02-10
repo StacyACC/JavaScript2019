@@ -22,20 +22,23 @@ function accessingAnArray() {
 
 /**
  * Loop through the array using a for loop and return the highest number
- * @param  { array }
+ * @param  { array }"
+ * "
  * @returns { number } the highest number that was in the array
  * @example
  * highestNumber([1, 2, 3]) // [3]
  * highestNumber([5, 1, 2, 3, 10]) // [10]
  *
  **/
-function highestNumber(array) {
-  var highestnumber = 0;
-  for (var i = 0; i < highestNumber.length; i++) {
-    if (highestnumber < array[i]) highestnumber = array[i];
-  }
 
-  return highestnumber;
+function highestNumber(array) {
+  var number = 0;
+  for (var i = 0; i < array.length; i++) {
+    if (number < array[i]) {
+      number = array[i];
+    }
+    return number;
+  }
 }
 
 /**
@@ -46,8 +49,6 @@ function highestNumber(array) {
  * @example
  * combineArray(['Japan','China','India'], ['USA','UK']) // ['Japan','China','India','USA','UK']
  **/
-
-function combineArray(array1, array2) {}
 
 /**
  * A palindrom is a word, phrase, or sequence that reads the same backward as forward, e.g., madam, nurses or run.
