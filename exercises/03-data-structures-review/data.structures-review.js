@@ -10,41 +10,70 @@
  */
 
 function upperCaseEachElementInArray(array) {
+  for (var item of array) {
+    item = item.split("");
+    itemFirst = item[0].toUpperCase();
+  }
   /*** Dont forget to return an array with all elements being upper-cased */
 }
 
 /**
- *  Use the Spread Operator to add additional values to an existing object using the second argument
- * @param  {obj, string}
- * @return {array}
- * @example
- * addMiddleNameToObject({firstName:'Tom',lastName:'Jerry'},'Harris') // {firstName:'Tom',MiddleName:'Harris', lastName:'Jerry'}
+ *  Use the Spread Operator to add an additional name (middle name) to an object
  *
+ * @param  {Object} names an object representing a person, where each key is a type of name
+ * e.g. {firstName:'Tom',lastName:'Jerry'}
+ * @param {string} middleName
+ * @return {Object} a clone of the names object with a middle name added to it
+ * @example
+ * addMiddleNameToObject({firstName:'Tom',lastName:'Jerry'},'Harris')
+ * // {firstName:'Tom',MiddleName:'Harris', lastName:'Jerry'}
  */
 
+function addMiddleNameToObject(names, middleName) {}
+
 /**
- * Use split method to return an array
+ * Use split method to return an array on white space
  * @param  { string }
  * @return { array }
  * @example
+ * stringToArrayConverter("I went home.");
+ * // ["I", "went", "home."]
  */
 
 function stringToArrayConverter(str) {}
 
 /**
- * 
+ *
  * @param  { string }
  * @return { array }
  * @example
  */
 
-
 /**
- * Count the occurances of the elements inside an array and return an object with the key representing the element and value representing the occurrances
- * @param {array}
- * @return {obj}
- * @example 
- * dynamicObject(['Javascript','Javascript','HTML','HTML', 'CSS','CSS','PHP']) // {Javascript:2, HTML:2,CSS:2, PHP:1}
+ * Tally the number of occurrences of each programming language in an array of languages.
+ * @param {array} languages
+ * @return {Object} an object where each key represents a language and its value is
+ * the number of occurrences.
+ * @example
+ * dynamicObject(["Javascript","Javascript","HTML","HTML", "CSS","CSS","PHP"])
+ * { "Javascript":2, "HTML":2, "CSS":2, "PHP":1 }
  */
 
-function dynamicObject()
+function dynamicObject(array) {
+  var obj = {};
+  for (var item of array) {
+    if (obj[item]) {
+      obj[item] = obj[item] + 1;
+    } else {
+      obj[item] = 1;
+    }
+  }
+  return obj;
+}
+
+module.exports = {
+  upperCaseEachElementInArray,
+  addMiddleNameToObject,
+  stringToArrayConverter,
+  dynamicObject
+};
