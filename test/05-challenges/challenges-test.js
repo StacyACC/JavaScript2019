@@ -45,4 +45,5 @@ describe("arr-diff", () => {
     const result = diffArray([], ["snuffleupagus", "cookie monster", "elmo"]);
     expect(result).to.have.members(["snuffleupagus", "cookie monster", "elmo"]);
   });
+  console.log("here");
 });

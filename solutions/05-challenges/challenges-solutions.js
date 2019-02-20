@@ -14,17 +14,10 @@
  */
 
 const getIndexToIns = (array, num) => {
-  array.sort(function(a, b) {
-    return a - b;
-  });
-  for (var i = 0; i < array.length; i++) {
-    if (num <= array[i]) {
-      return i;
-    } else if (num > array[array.length - 1]) {
-      i = array.length;
-      return i;
-    }
-  }
+  // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+  const sortedArray = [...array, num].sort((a, b) => a > b);
+  // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexof
+  return sortedArray.indexOf(num);
 };
 
 /**
@@ -41,20 +34,16 @@ const getIndexToIns = (array, num) => {
  */
 
 const diffArray = (arr1, arr2) => {
-  let newArray = [];
-  for (let i = 0; i < arr1.length; i++) {
-    let a = arr2.indexOf(arr1[i]);
-    if (a === -1) {
-      newArray.push(arr1[i]);
+  const compare = (currArray, otherArray) => {
+    let newArray = [];
+    for (var item of currArray) {
+      // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexof
+      if (otherArray.indexOf(item) < 0) newArray.push(item);
     }
-  }
-  for (let y = 0; y < arr2.length; i++) {
-    let b = arr1.indexOf(arr2[y]);
-    if (b === -1) {
-      newArray.push(arr2[y]);
-    }
-  }
-  return newArray;
+    return newArray;
+  };
+
+  return [...compare(arr1, arr2), ...compare(arr2, arr1)];
 };
 
 module.exports = {
