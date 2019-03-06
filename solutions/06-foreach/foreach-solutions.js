@@ -20,12 +20,11 @@ const forEach = (arr, callback) => {
  */
 const showFirstAndLast = arr => {
   let newArray = [];
-
-  arr.forEach(function(name, index) {
-    let nameArray = name.split("");
-    let firstAndLast = nameArray[0] + nameArray[nameArray.length - 1];
-    newArray.push(firstAndLast);
-  });
+  for (let item of arr) {
+    const first = item[0];
+    const last = item[item.length - 1];
+    newArray.push(`${first}${last}`);
+  }
   return newArray;
 };
 

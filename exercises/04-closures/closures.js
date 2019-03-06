@@ -5,6 +5,10 @@
  * @returns {Object} an object that has two methods. See comments below.
  */
 const calculator = () => {
+  var sum;
+
+  var addingNumbers = (num, sum) => num + sum;
+
   /**
    * Create a private variable called "sum"
    * @var {number}
